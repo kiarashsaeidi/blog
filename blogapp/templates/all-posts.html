@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}All Posts{%endblock%}
+
+{%block css%}
+<link rel = "stylesheet" href ="{%static "all-posts.css"%}"/>
+
+<link rel = "stylesheet" href ="{%static "post.css"%}"/>
+
+
+{%endblock%}
+
+{%block body%}
+<section id="all-posts">
+    <ul>
+        {%for post in all_post%}
+            {% include "includes/post.html" %}
+        {%endfor%}
+
+    </ul>
+</section>
+{% endblock %}

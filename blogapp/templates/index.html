@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block title%}My blog{%endblock%}
+
+{%block css%}
+<link rel = "stylesheet" href = "{%static "index.css"%}" />
+<link rel = "stylesheet" href = "{%static "post.css"%}"  /> 
+{%endblock%}
+
+{%block body%}
+
+<section id="welcome"> 
+    <header> 
+    <img src= {% static "images/2.jpg"%}  alt = "kiarash, the author of this blog">
+    <h2>Kiarash Saeidi's Blog</h2>
+    </header>
+    <p>I'm Kiarash and I love to blog about technology</p>
+</section>
+
+<section id = "latest-posts">
+        <h2>My Latest Thoughts</h2>
+<ul>
+    {%for post in posts%}
+        {%include "includes/post.html"%}
+    {%endfor%}
+</ul>
+</section>
+
+        
+<section id = "about">
+    
+        <h2> What I Do</h2>
+        <p>I love programming and I love to help others and I enjoy exploring new technologies in general!</p>
+        <p>My goal is to keep on growing as an developer - and if I could help you do the same, I'd be very happy</p>
+    
+</section>    
+
+
+{%endblock%}
